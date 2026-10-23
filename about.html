@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FindIt — About Us & FAQ</title>
+  <title>FindIt — About Us & Team</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="tailwindtemplate.js"></script>
   <script src="interface.js"></script>
@@ -38,7 +38,26 @@
           </a>
 
           <button id="theme-toggle-btn" onclick="toggleTheme()" type="button" class="p-2 rounded-xl border border-slate-300 bg-slate-100 text-slate-700 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-700 transition focus:outline-none" aria-label="Toggle Theme">
-            🌙
+            <svg id="theme-sun-icon" class="w-5 h-5 text-amber-500 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg id="theme-moon-icon" class="w-5 h-5 text-slate-700 fill-none stroke-current stroke-2 hidden" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-200 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
           </button>
         </div>
 
@@ -63,59 +82,109 @@
         Empowering Student Developers & Innovators
       </h1>
       <p class="mt-4 text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed">
-        FindIt is a centralized event and workshop registration ecosystem built for campus communities. We bridge the gap between technical workshops, professional talks, and hands-on competitions.
+        FindIt is a centralised event and workshop registration ecosystem built for campus communities. We bridge the gap between technical workshops, professional talks, and hands-on competitions.
       </p>
     </div>
 
     <section class="mb-20">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8">
         <div>
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Meet the Team</h2>
-          <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Click on any team member to view their bio and focus areas.</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Meet the Leadership Team</h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Click on any arrow down button to expand and view team member descriptions.</p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
 
-        <div onclick="toggleBio('bio-1', 'arrow-1')" class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 shadow-md cursor-pointer hover:border-brand-500/50 transition duration-300">
-          <div class="flex items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-brand-600 text-white font-bold text-xl flex items-center justify-center shadow-md">
-              YK
+      
+        <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 shadow-md transition duration-300">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white font-bold text-xl flex items-center justify-center shadow-md">
+                AA
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Aya Abdelrahman</h3>
+                <p class="text-xs font-medium text-amber-600 dark:text-amber-400">Director of FindIt</p>
+              </div>
             </div>
-            <div class="flex-grow">
-              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Youssef Khaled</h3>
-              <p class="text-xs font-medium text-brand-600 dark:text-brand-400">Lead Front-End Developer</p>
-            </div>
+            <button onclick="toggleBio('bio-aya', 'arrow-aya')" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-label="Show description">
+              <svg id="arrow-aya" class="w-5 h-5 text-slate-500 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
           </div>
-          <div id="bio-1" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50 text-xs text-slate-600 dark:text-slate-400 space-y-2">
-            <p>Specializes in component-driven UI architecture, state management, and building accessible Web applications using modern JavaScript and Tailwind CSS.</p>
+          <div id="bio-aya" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Oversees long-term platform strategy, strategic partnerships with university faculties, and executive leadership to ensure seamless campus event experiences.
           </div>
         </div>
 
-        <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 shadow-md">
-          <div class="flex items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-purple-600 text-white font-bold text-xl flex items-center justify-center shadow-md">
-              WA
+        
+        <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 shadow-md transition duration-300">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white font-bold text-xl flex items-center justify-center shadow-md">
+                MH
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Malak Hany</h3>
+                <p class="text-xs font-medium text-emerald-600 dark:text-emerald-400">President of FindIt Workshop/Event Finder</p>
+              </div>
             </div>
-            <div class="flex-grow">
-              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Weam Ahmed</h3>
-              <p class="text-xs font-medium text-purple-600 dark:text-purple-400">Vice President of FindIt Workshop/Event Finder</p>
-            </div>
+            <button onclick="toggleBio('bio-malak', 'arrow-malak')" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-label="Show description">
+              <svg id="arrow-malak" class="w-5 h-5 text-slate-500 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+          <div id="bio-malak" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Leads overall operations, manages venue logistics, speaker schedules, and coordinates with student organization leaders across campus.
           </div>
         </div>
 
-        <div onclick="toggleBio('bio-3', 'arrow-3')" class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 shadow-md cursor-pointer hover:border-brand-500/50 transition duration-300">
-          <div class="flex items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white font-bold text-xl flex items-center justify-center shadow-md">
-              MH
+        
+        <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 shadow-md transition duration-300">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-purple-600 text-white font-bold text-xl flex items-center justify-center shadow-md">
+                WA
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Weam Ahmed</h3>
+                <p class="text-xs font-medium text-purple-600 dark:text-purple-400">Vice President of FindIt Workshop/Event Finder</p>
+              </div>
             </div>
-            <div class="flex-grow">
-              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Malak Hany</h3>
-              <p class="text-xs font-medium text-emerald-600 dark:text-emerald-400">President of FindIt Workshop/Event Finder</p>
-            </div>
+            <button onclick="toggleBio('bio-weam', 'arrow-weam')" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-label="Show description">
+              <svg id="arrow-weam" class="w-5 h-5 text-slate-500 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
           </div>
-          <div id="bio-3" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50 text-xs text-slate-600 dark:text-slate-400 space-y-2">
-            <p>Manages venue bookings, speaker schedules, capacity limits, and coordinates with student organization leaders across campus.</p>
+          <div id="bio-weam" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Directs event planning, coordinates student outreach initiatives, and manages attendee registration workflows for technical workshops and hackathons.
+          </div>
+        </div>
+
+        
+        <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 shadow-md transition duration-300">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-brand-600 text-white font-bold text-xl flex items-center justify-center shadow-md">
+                YK
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Youssef Khaled</h3>
+                <p class="text-xs font-medium text-brand-600 dark:text-brand-400">Lead Front-End Developer</p>
+              </div>
+            </div>
+            <button onclick="toggleBio('bio-youssef', 'arrow-youssef')" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition" aria-label="Show description">
+              <svg id="arrow-youssef" class="w-5 h-5 text-slate-500 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+          <div id="bio-youssef" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            Architects user-interface components, handles responsive Tailwind styling, and implements dynamic interaction workflows across the FindIt web interface.
           </div>
         </div>
 

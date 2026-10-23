@@ -34,6 +34,21 @@ function showAlert(message, isError = false) {
     banner.classList.add('bg-emerald-500/20', 'text-emerald-300', 'border', 'border-emerald-500/30');
   }
 }
+document.addEventListener('DOMContentLoaded', () => {
+  setupDobRestrictions();
+});
+
+function setupDobRestrictions() {
+  const dobInput = document.getElementById('reg-dob');
+  if (dobInput) {
+    const today = new Date();
+    const maxDate = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+    const yyyy = maxDate.getFullYear();
+    const mm = String(maxDate.getMonth() + 1).padStart(2, '0');
+    const dd = String(maxDate.getDate()).padStart(2, '0');
+    dobInput.max = `${yyyy}-${mm}-${dd}`;
+  }
+}
 
 function handleRegister(e) {
   e.preventDefault();
@@ -44,13 +59,21 @@ function handleRegister(e) {
   const year = document.getElementById('reg-year').value;
   const password = document.getElementById('reg-password').value;
 
-  const trackNodes = document.querySelectorAll('.track-checkbox:checked');
-  const tracks = Array.from(trackNodes).map(node => node.value);
-
-  let users = JSON.parse(localStorage.getItem('eventhub_users') || '[]');
+  if (!dob) {
+    showAlert('Please select a valid Date of Birth.', true);
+    return;
+  }
+  const birthDate = new Date(dob);
+  const today = new Date();
   
-  if (users.some(u => u.email === email)) {
-    showAlert('An account with this email already exists.', true);
+  let ageYears = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    ageYears--;
+  }
+
+  if (birthDate >= today || ageYears < 1) {
+    showAlert('Date of birth cannot be within the current day, week, month, or year.', true);
     return;
   }
 
@@ -96,3 +119,64 @@ function handleLogin(e) {
     window.location.href = 'home.html';
   }, 1000);
 }
+
+function openForgotPasswordModal() {
+  const modal = document.getElementById('forgot-password-modal');
+  const alertBanner = document.getElementById('modal-alert-banner');
+  if (alertBanner) alertBanner.classList.add('hidden');
+  if (modal) {
+    modal.classList.remove('hidden');
+  }
+}
+
+function closeForgotPasswordModal() {
+  const modal = document.getElementById('forgot-password-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function handleResetPassword(e) {
+  e.preventDefault();
+  const email = document.getElementById('forgot-email').value.trim().toLowerCase();
+  const newPassword = document.getElementById('forgot-new-password').value;
+
+  let users = JSON.parse(localStorage.getItem('eventhub_users') || '[]');
+  const userIndex = users.findIndex(u => u.email === email);
+
+  if (userIndex === -1) {
+    showModalAlert('No registered account found with this email address.', true);
+    return;
+  }
+
+  users[userIndex].password = newPassword;
+  localStorage.setItem('eventhub_users', JSON.stringify(users));
+
+  let currentUser = JSON.parse(localStorage.getItem('eventhub_current_user'));
+  if (currentUser && currentUser.email === email) {
+    currentUser.password = newPassword;
+    localStorage.setItem('eventhub_current_user', JSON.stringify(currentUser));
+  }
+
+  showModalAlert('Password successfully reset! You can now log in.');
+
+  setTimeout(() => {
+    closeForgotPasswordModal();
+    switchTab('login');
+    const loginEmail = document.getElementById('login-email');
+    if (loginEmail) loginEmail.value = email;
+  }, 1500);
+}
+
+function togglePasswordVisibility(inputId, eyeIconId) {
+  const input = document.getElementById(inputId);
+  const eyeIcon = document.getElementById(eyeIconId);
+  if (!input || !eyeIcon) return;
+
+  if (input.type === 'password') {
+    input.type = 'text';
+    eyeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858-5.908a10.025 10.025 0 013.122-.563c4.478 0 8.268 2.943 9.542 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21M3 3l18 18" />`;
+  } else {
+    input.type = 'password';
+    eyeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />`;
+  }
+}
+
