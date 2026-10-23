@@ -3,42 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EventHub — Events & Competitions</title>
+  <title>FindIt — Register & Sign In</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="tailwindtemplate.js"></script>
   <script src="interface.js"></script>
 </head>
-<body class="min-h-full flex flex-col font-sans antialiased selection:bg-brand-500 selection:text-white transition-colors duration-300 bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+<body class="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-sans antialiased transition-colors duration-300 bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 relative">
 
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-800 transition-colors duration-300">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        
-        <div class="flex items-center gap-3">
-          <a href="index.html" class="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900 dark:text-white">
-            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-brand-600 text-white font-black shadow-lg shadow-brand-500/30">
-              F
-            </span>
-            <span>Find<span class="text-brand-500">It</span></span>
-          </a>
-        </div>
-
-        <div class="hidden md:flex items-center gap-1">
-          <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-900 bg-slate-200/80 border border-slate-300 dark:text-white dark:bg-slate-800/80 dark:border-slate-700/50 transition">Events</a>
-          <a href="workshops.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition">Workshops</a>
-          <a href="about.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition">About Us</a>
-          <a href="profile.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition">My Profile</a>
-          <a href="#" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition">Settings</a>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <a href="login.html" class="hidden sm:inline-flex px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition">Log In</a>
-          <a href="register.html" class="px-4 py-2 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 rounded-xl transition shadow-lg shadow-brand-600/25">
-            Register
-          </a>
-
-          <button id="theme-toggle-btn" onclick="toggleTheme()" type="button" class="p-2 rounded-xl border border-slate-300 bg-slate-100 text-slate-700 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-700 transition focus:outline-none" aria-label="Toggle Theme">
-            <svg id="theme-sun-icon" class="w-5 h-5 text-amber-500 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+  <div class="absolute top-4 right-4 sm:top-6 sm:right-6">
+    <button id="theme-toggle-btn" onclick="toggleTheme()" type="button" class="p-2.5 rounded-xl border border-slate-300 bg-white text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-white transition focus:outline-none shadow-md" aria-label="Toggle Theme">
+      <svg id="theme-sun-icon" class="w-5 h-5 text-amber-500 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
               <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -49,230 +23,130 @@
               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
-            <svg id="theme-moon-icon" class="w-5 h-5 text-slate-700 fill-none stroke-current stroke-2 hidden" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
+      <svg id="theme-moon-icon" class="w-5 h-5 text-slate-700 fill-none stroke-current stroke-2 hidden" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </div>
 
-          <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-200 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+  <div class="sm:mx-auto sm:w-full sm:max-w-md text-center">
+    <a href="home.html" class="inline-flex items-center gap-2 font-bold text-2xl tracking-tight text-slate-900 dark:text-white mb-2">
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-brand-600 text-white font-black shadow-lg shadow-brand-500/30">
+        F
+      </span>
+      <span>Find<span class="text-brand-500">It</span></span>
+    </a>
+    <h2 class="text-xl font-bold tracking-tight text-slate-800 dark:text-slate-200">
+      Welcome to FindIt Platform
+    </h2>
+  </div>
+
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-lg px-4 sm:px-0">
+    <div class="bg-white border border-slate-200 dark:bg-slate-800/80 dark:border-slate-700/60 rounded-3xl p-6 sm:p-8 shadow-xl transition-all">
+      
+      <div class="flex rounded-xl bg-slate-100 dark:bg-slate-900/60 p-1 border border-slate-200 dark:border-slate-700/50 mb-6">
+        <button id="tab-login-btn" onclick="switchTab('login')" class="flex-1 py-2 text-sm font-semibold rounded-lg text-slate-900 bg-white dark:text-white dark:bg-slate-800 shadow transition-all">
+          Sign In
+        </button>
+        <button id="tab-register-btn" onclick="switchTab('register')" class="flex-1 py-2 text-sm font-semibold rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-all">
+          Create Account
+        </button>
+      </div>
+
+      <div id="alert-banner" class="hidden mb-5 p-3 rounded-xl text-xs font-medium text-center transition-all"></div>
+
+      <!-- SIGN IN FORM -->
+      <form id="login-form" onsubmit="handleLogin(event)" class="space-y-4">
+        <div>
+          <label for="login-email" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+            Email Address
+          </label>
+          <input type="email" id="login-email" required placeholder="student@fcai.cu.edu.eg" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 outline-none" />
         </div>
 
-      </div>
+        <div>
+          <label for="login-password" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+            Password
+          </label>
+          <input type="password" id="login-password" required placeholder="••••••••" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 outline-none" />
+        </div>
 
-      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 py-3 space-y-1">
-        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-900 bg-slate-200 dark:text-white dark:bg-slate-800">Events</a>
-        <a href="workshops.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800">Workshops</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800">About Us</a>
-        <a href="profile.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800">My Profile</a>
-      </div>
-    </nav>
-  </header>
+        <button type="submit" class="w-full py-3 px-4 rounded-xl text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 transition shadow-lg shadow-brand-600/25 mt-2">
+          Sign In
+        </button>
+      </form>
 
-  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    
-    <div class="mb-10 space-y-6">
-      <div>
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Upcoming Campus Events & Hackathons</h1>
-        <p class="mt-2 text-slate-600 dark:text-slate-400 text-base max-w-2xl">
-          Join talk sessions, public speaking seminars, business negotiation tracks, and high-energy hackathons.
-        </p>
-      </div>
+      <!-- REGISTER FORM -->
+      <form id="register-form" onsubmit="handleRegister(event)" class="hidden space-y-4">
+        <div>
+          <label for="reg-name" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Full Name</label>
+          <input type="text" id="reg-name" required placeholder="Youssef Khaled" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 outline-none" />
+        </div>
 
-      <div class="flex flex-wrap items-center gap-3">
-        <input 
-          id="event-search-input"
-          type="text" 
-          placeholder="Search events..." 
-          class="w-full sm:w-64 px-4 py-2 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
-        />
-        <select 
-          id="category-select"
-          class="w-full sm:w-auto px-4 py-2 bg-white border border-slate-300 rounded-xl text-sm text-slate-800 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
-        >
-          <option value="all">All Categories</option>
-          <option value="business">Business & PR</option>
-          <option value="ai">AI in Modern World</option>
-          <option value="hackathon">Hackathons</option>
-          <option value="softskills">Presentation Skills</option>
-        </select>
-      </div>
-    </div>
+        <div>
+          <label for="reg-email" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">University Email</label>
+          <input type="email" id="reg-email" required placeholder="student@fcai.cu.edu.eg" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 outline-none" />
+        </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-
-      <div data-category="business" class="flex flex-col bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-2xl overflow-hidden hover:border-slate-400 dark:hover:border-slate-600 transition duration-300 shadow-md">
-        <div class="p-6 flex-grow flex flex-col justify-between">
+        <div class="grid grid-cols-2 gap-3">
           <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                Business & PR
-              </span>
-              <span id="seats-event-1" class="text-xs font-semibold text-emerald-600 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 dark:text-emerald-400">
-                25 Seats Left
-              </span>
-            </div>
-            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">How to Close Deals & Negotiate</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4">
-              Master corporate communication tactics, strategic negotiation skills, and closing deal techniques for student leaders and entrepreneurs.
-            </p>
+            <label for="reg-dob" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Date of Birth</label>
+            <input type="date" id="reg-dob" required class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-xs dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 outline-none" />
           </div>
-
-          <div class="space-y-2 border-t border-slate-200 dark:border-slate-700/50 pt-4 text-xs text-slate-600 dark:text-slate-300">
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span>Nov 10, 2026 • 01:00 PM</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              </svg>
-              <span>Hall 7, FCAI Cairo University</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="p-4 bg-slate-50 border-t border-slate-200 dark:bg-slate-800/80 dark:border-slate-700/50 transition">
-          <button 
-            onclick="bookSeat('seats-event-1', this)" 
-            class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20"
-          >
-            Book Seat
-          </button>
-        </div>
-      </div>
-
-      <div data-category="ai" class="flex flex-col bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-2xl overflow-hidden hover:border-slate-400 dark:hover:border-slate-600 transition duration-300 shadow-md">
-        <div class="p-6 flex-grow flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
-                AI Tech Talk
-              </span>
-              <span id="seats-event-2" class="text-xs font-semibold text-emerald-600 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 dark:text-emerald-400">
-                18 Seats Left
-              </span>
-            </div>
-            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">How to Use AI in the Modern World</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4">
-              Explore prompt engineering, LLM integration, and real-world AI tools transforming academic research and daily developer productivity.
-            </p>
-          </div>
-
-          <div class="space-y-2 border-t border-slate-200 dark:border-slate-700/50 pt-4 text-xs text-slate-600 dark:text-slate-300">
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span>Nov 18, 2026 • 03:00 PM</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              </svg>
-              <span>Main Auditorium</span>
-            </div>
+            <label for="reg-gender" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Gender</label>
+            <select id="reg-gender" required class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-xs dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 outline-none">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
           </div>
         </div>
 
-        <div class="p-4 bg-slate-50 border-t border-slate-200 dark:bg-slate-800/80 dark:border-slate-700/50 transition">
-          <button onclick="bookSeat('seats-event-2', this)" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20">
-            Book Seat
-          </button>
+        <div>
+          <label for="reg-year" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Academic Year</label>
+          <select id="reg-year" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 outline-none">
+            <option value="Freshman">Freshman (Year 1)</option>
+            <option value="Sophomore">Sophomore (Year 2)</option>
+            <option value="Junior">Junior (Year 3)</option>
+            <option value="Senior">Senior (Year 4)</option>
+          </select>
         </div>
-      </div>
 
-     
-      <div data-category="hackathon" class="flex flex-col bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-2xl overflow-hidden hover:border-slate-400 dark:hover:border-slate-600 transition duration-300 shadow-md">
-        <div class="p-6 flex-grow flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
-                Hackathon
-              </span>
-              <span id="seats-event-3" class="text-xs font-semibold text-emerald-600 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 dark:text-emerald-400">
-                8 Teams Left
-              </span>
-            </div>
-            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">NextGen Hackathon 2026</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4">
-              A 24-hour rapid prototyping competition bringing student developers and designers together to build impactful products.
-            </p>
-          </div>
-
-          <div class="space-y-2 border-t border-slate-200 dark:border-slate-700/50 pt-4 text-xs text-slate-600 dark:text-slate-300">
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span>Dec 01, 2026 • 09:00 AM</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              </svg>
-              <span>Creativa Giza Innovation Hub</span>
-            </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Track Preferences</label>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <label class="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-700/60 cursor-pointer">
+              <input type="checkbox" value="Technical Tracks" class="track-checkbox h-4 w-4 rounded text-brand-600 focus:ring-brand-500" checked />
+              <span>Technical Tracks</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-700/60 cursor-pointer">
+              <input type="checkbox" value="Digital Marketing" class="track-checkbox h-4 w-4 rounded text-brand-600 focus:ring-brand-500" />
+              <span>Digital Marketing</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-700/60 cursor-pointer">
+              <input type="checkbox" value="PR & Media" class="track-checkbox h-4 w-4 rounded text-brand-600 focus:ring-brand-500" />
+              <span>PR & Media</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-200 dark:border-slate-700/60 cursor-pointer">
+              <input type="checkbox" value="HR & Logistics" class="track-checkbox h-4 w-4 rounded text-brand-600 focus:ring-brand-500" />
+              <span>HR & Logistics</span>
+            </label>
           </div>
         </div>
 
-        <div class="p-4 bg-slate-50 border-t border-slate-200 dark:bg-slate-800/80 dark:border-slate-700/50 transition">
-          <button onclick="bookSeat('seats-event-3', this)" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20">
-            Book Seat
-          </button>
-        </div>
-      </div>
-
-  
-      <div data-category="softskills" class="flex flex-col bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-2xl overflow-hidden hover:border-slate-400 dark:hover:border-slate-600 transition duration-300 shadow-md">
-        <div class="p-6 flex-grow flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="px-2.5 py-1 text-xs font-semibold rounded-lg bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
-                Presentation Skills
-              </span>
-              <span id="seats-event-4" class="text-xs font-semibold text-emerald-600 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 dark:text-emerald-400">
-                14 Seats Left
-              </span>
-            </div>
-            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">How to Present Your Ideas</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4">
-              Learn presentation skills, how to present your ideas across an audience, and the confidence to speak and pitch technical projects effectively.
-            </p>
-          </div>
-
-          <div class="space-y-2 border-t border-slate-200 dark:border-slate-700/50 pt-4 text-xs text-slate-600 dark:text-slate-300">
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span>Dec 08, 2026 • 12:00 PM</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              </svg>
-              <span>Seminar Room B</span>
-            </div>
-          </div>
+        <div>
+          <label for="reg-password" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Password</label>
+          <input type="password" id="reg-password" required minlength="6" placeholder="At least 6 characters" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-100 focus:ring-2 focus:ring-brand-500 outline-none" />
         </div>
 
-        <div class="p-4 bg-slate-50 border-t border-slate-200 dark:bg-slate-800/80 dark:border-slate-700/50 transition">
-          <button onclick="bookSeat('seats-event-4', this)" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20">
-            Book Seat
-          </button>
-        </div>
-      </div>
+        <button type="submit" class="w-full py-3 px-4 rounded-xl text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 transition shadow-lg shadow-brand-600/25 mt-2">
+          Create Account
+        </button>
+      </form>
 
     </div>
-  </main>
+  </div>
 
-  <script src="menu.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EventHub — About Us & FAQ</title>
+  <title>FindIt — About Us & FAQ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="tailwindtemplate.js"></script>
   <script src="interface.js"></script>
@@ -15,65 +15,46 @@
       <div class="flex items-center justify-between h-16">
         
         <div class="flex items-center gap-3">
-          <a href="index.html" class="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900 dark:text-white">
+          <a href="home.html" class="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900 dark:text-white">
             <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-brand-600 text-white font-black shadow-lg shadow-brand-500/30">
-              E
+              F
             </span>
             <span>Find<span class="text-brand-500">It</span></span>
           </a>
         </div>
 
         <div class="hidden md:flex items-center gap-1">
-          <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition">Events</a>
+          <a href="home.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition">Events</a>
           <a href="workshops.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition">Workshops</a>
           <a href="about.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-900 bg-slate-200/80 border border-slate-300 dark:text-white dark:bg-slate-800/80 dark:border-slate-700/50 transition">About Us</a>
           <a href="profile.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition">My Profile</a>
-          <a href="#" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition">Settings</a>
+          <a href="settings.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800 transition">Settings</a>
         </div>
 
         <div class="flex items-center gap-3">
-          <a href="login.html" class="hidden sm:inline-flex px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition">Log In</a>
-          <a href="register.html" class="px-4 py-2 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 rounded-xl transition shadow-lg shadow-brand-600/25">
+          <a href="index.html" class="hidden sm:inline-flex px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition">Log In</a>
+          <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 rounded-xl transition shadow-lg shadow-brand-600/25">
             Register
           </a>
 
           <button id="theme-toggle-btn" onclick="toggleTheme()" type="button" class="p-2 rounded-xl border border-slate-300 bg-slate-100 text-slate-700 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-700 transition focus:outline-none" aria-label="Toggle Theme">
-            <svg id="theme-sun-icon" class="w-5 h-5 text-amber-500 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg id="theme-moon-icon" class="w-5 h-5 text-slate-700 fill-none stroke-current stroke-2 hidden" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
-
-          <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-200 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800 focus:outline-none">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            🌙
           </button>
         </div>
 
       </div>
 
       <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 py-3 space-y-1">
-        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800">Events</a>
+        <a href="home.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800">Events</a>
         <a href="workshops.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800">Workshops</a>
         <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-900 bg-slate-200 dark:text-white dark:bg-slate-800">About Us</a>
         <a href="profile.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800">My Profile</a>
+        <a href="settings.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800">Settings</a>
       </div>
     </nav>
   </header>
 
   <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="px-3 py-1 text-xs font-semibold rounded-lg bg-brand-500/10 text-brand-600 dark:text-brand-500 border border-brand-500/20">
         Our Mission & Platform
@@ -82,7 +63,7 @@
         Empowering Student Developers & Innovators
       </h1>
       <p class="mt-4 text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed">
-        EventHub is a centralized event and workshop registration ecosystem built for campus communities. We bridge the gap between technical workshops, professional talks, and hands-on competitions.
+        FindIt is a centralized event and workshop registration ecosystem built for campus communities. We bridge the gap between technical workshops, professional talks, and hands-on competitions.
       </p>
     </div>
 
@@ -105,122 +86,46 @@
               <h3 class="text-lg font-bold text-slate-900 dark:text-white">Youssef Khaled</h3>
               <p class="text-xs font-medium text-brand-600 dark:text-brand-400">Lead Front-End Developer</p>
             </div>
-            <svg id="arrow-1" class="w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
           </div>
           <div id="bio-1" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50 text-xs text-slate-600 dark:text-slate-400 space-y-2">
             <p>Specializes in component-driven UI architecture, state management, and building accessible Web applications using modern JavaScript and Tailwind CSS.</p>
-            <div class="flex items-center gap-2 pt-1 font-mono text-[11px] text-brand-500">
-              <span>FC AI Cairo University</span> • <span>Front-End Specialist</span>
-            </div>
           </div>
         </div>
 
-        <div onclick="toggleBio('bio-2', 'arrow-2')" class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 shadow-md cursor-pointer hover:border-brand-500/50 transition duration-300">
+        <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 shadow-md">
           <div class="flex items-center gap-4">
             <div class="w-14 h-14 rounded-2xl bg-purple-600 text-white font-bold text-xl flex items-center justify-center shadow-md">
-              AM
+              WA
             </div>
             <div class="flex-grow">
               <h3 class="text-lg font-bold text-slate-900 dark:text-white">Weam Ahmed</h3>
               <p class="text-xs font-medium text-purple-600 dark:text-purple-400">Vice President of FindIt Workshop/Event Finder</p>
             </div>
-            <svg id="arrow-2" class="w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
           </div>
-          
         </div>
 
         <div onclick="toggleBio('bio-3', 'arrow-3')" class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 shadow-md cursor-pointer hover:border-brand-500/50 transition duration-300">
           <div class="flex items-center gap-4">
             <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white font-bold text-xl flex items-center justify-center shadow-md">
-              MS
+              MH
             </div>
             <div class="flex-grow">
               <h3 class="text-lg font-bold text-slate-900 dark:text-white">Malak Hany</h3>
-              <p class="text-xs font-medium text-emerald-600 dark:text-emerald-400">President of FindIt Workshop/event Finder</p>
+              <p class="text-xs font-medium text-emerald-600 dark:text-emerald-400">President of FindIt Workshop/Event Finder</p>
             </div>
-            <svg id="arrow-3" class="w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
           </div>
           <div id="bio-3" class="hidden mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50 text-xs text-slate-600 dark:text-slate-400 space-y-2">
             <p>Manages venue bookings, speaker schedules, capacity limits, and coordinates with student organization leaders across campus.</p>
-            <div class="flex items-center gap-2 pt-1 font-mono text-[11px] text-emerald-500">
-              <span>Public Relations</span> • <span>Operations</span>
-            </div>
           </div>
         </div>
 
       </div>
     </section>
-
-    <section class="max-w-4xl mx-auto mb-16">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Frequently Asked Questions</h2>
-        <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Find answers to common questions about workshop seats, registration, and digital tickets.</p>
-      </div>
-
-      <div class="space-y-4">
-
-        <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-2xl overflow-hidden transition">
-          <button onclick="toggleFaq('faq-1', 'faq-icon-1')" class="w-full p-5 text-left flex items-center justify-between font-semibold text-slate-900 dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-800/80 transition">
-            <span>How does seat decrementing work when I book a workshop?</span>
-            <svg id="faq-icon-1" class="w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div id="faq-1" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-slate-700/50 pt-3">
-            Every event or workshop has a fixed capacity. When you click <strong>"Book Seat"</strong>, the available count instantly decrements by 1. The booking is linked to your user account and saved in browser storage.
-          </div>
-        </div>
-
-        <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-2xl overflow-hidden transition">
-          <button onclick="toggleFaq('faq-2', 'faq-icon-2')" class="w-full p-5 text-left flex items-center justify-between font-semibold text-slate-900 dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-800/80 transition">
-            <span>Can I cancel a booking if I can no longer attend?</span>
-            <svg id="faq-icon-2" class="w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div id="faq-2" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-slate-700/50 pt-3">
-            Yes! Go to your <strong>My Profile</strong> page, locate the event ticket, and click <strong>"Cancel Booking"</strong>. This removes the pass from your account and increments the seat count back on the main listings page.
-          </div>
-        </div>
-
-        <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-2xl overflow-hidden transition">
-          <button onclick="toggleFaq('faq-3', 'faq-icon-3')" class="w-full p-5 text-left flex items-center justify-between font-semibold text-slate-900 dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-800/80 transition">
-            <span>Do I need to print my digital ticket pass?</span>
-            <svg id="faq-icon-3" class="w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div id="faq-3" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-slate-700/50 pt-3">
-            You can either print the digital pass directly using the <strong>"Print Pass 🖨️"</strong> button on your profile or present the generated QR code on your mobile phone at the hall entrance.
-          </div>
-        </div>
-
-        <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-2xl overflow-hidden transition">
-          <button onclick="toggleFaq('faq-4', 'faq-icon-4')" class="w-full p-5 text-left flex items-center justify-between font-semibold text-slate-900 dark:text-white hover:bg-slate-100/50 dark:hover:bg-slate-800/80 transition">
-            <span>What happens when an event reaches 0 seats?</span>
-            <svg id="faq-icon-4" class="w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div id="faq-4" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-slate-700/50 pt-3">
-            When available seats reach zero, the event button automatically updates to a disabled <strong>"Sold Out"</strong> state, preventing additional registrations unless an existing attendee cancels.
-          </div>
-        </div>
-
-      </div>
-    </section>
-
   </main>
 
   <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 py-6 transition">
     <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 dark:text-slate-400">
-      © 2026 EventHub Platform. Built for Cairo University FCAI Student Workshops.
+      © 2026 FindIt Platform. Showing you what you've been looking for!
     </div>
   </footer>
 
