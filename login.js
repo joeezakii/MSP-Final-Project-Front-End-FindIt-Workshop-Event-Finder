@@ -1,3 +1,55 @@
+document.addEventListener('DOMContentLoaded', () => {
+  setupDobRestrictions();
+  checkAuthState();
+});
+
+function checkAuthState() {
+  const currentUser = JSON.parse(localStorage.getItem('eventhub_current_user'));
+  const guestAuthButtons = document.getElementById('guest-auth-buttons');
+  const profileMenu = document.getElementById('user-profile-menu');
+  const userAvatar = document.getElementById('user-avatar');
+  const userDisplayName = document.getElementById('user-display-name');
+  const dropdownName = document.getElementById('dropdown-user-name');
+  const dropdownEmail = document.getElementById('dropdown-user-email');
+
+  if (currentUser) {
+    if (guestAuthButtons) guestAuthButtons.classList.add('hidden');
+    if (profileMenu) profileMenu.classList.remove('hidden');
+
+    if (userDisplayName) userDisplayName.innerText = currentUser.name || 'User';
+    if (dropdownName) dropdownName.innerText = currentUser.name || 'User';
+    if (dropdownEmail) dropdownEmail.innerText = currentUser.email || '';
+    if (userAvatar) {
+      const fallbackAvatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(currentUser.name || 'User')}&background=0284c7&color=fff`;
+      userAvatar.src = currentUser.profilePic || fallbackAvatar;
+    }
+  } else {
+    if (guestAuthButtons) guestAuthButtons.classList.remove('hidden');
+    if (profileMenu) profileMenu.classList.add('hidden');
+  }
+}
+
+function toggleUserDropdown() {
+  const dropdown = document.getElementById('user-dropdown');
+  if (dropdown) dropdown.classList.toggle('hidden');
+}
+
+document.addEventListener('click', (e) => {
+  const profileMenu = document.getElementById('user-profile-menu');
+  const dropdown = document.getElementById('user-dropdown');
+  if (profileMenu && dropdown && !profileMenu.contains(e.target)) {
+    dropdown.classList.add('hidden');
+  }
+});
+
+function handleLogout() {
+  localStorage.removeItem('eventhub_current_user');
+  const dropdown = document.getElementById('user-dropdown');
+  if (dropdown) dropdown.classList.add('hidden');
+  checkAuthState();
+  window.location.reload();
+}
+
 function switchTab(tab) {
   const loginForm = document.getElementById('login-form');
   const registerForm = document.getElementById('register-form');
@@ -74,6 +126,17 @@ function handleRegister(e) {
 
   if (birthDate >= today || ageYears < 1) {
     showAlert('Date of birth cannot be within the current day, week, month, or year.', true);
+    return;
+  }
+
+  const trackNodes = document.querySelectorAll('.track-checkbox:checked');
+  const tracks = Array.from(trackNodes).map(node => node.value);
+
+
+  let users = JSON.parse(localStorage.getItem('eventhub_users') || '[]');
+
+  if (users.some(u => u.email === email)) {
+    showAlert('An account with this email address already exists.', true);
     return;
   }
 

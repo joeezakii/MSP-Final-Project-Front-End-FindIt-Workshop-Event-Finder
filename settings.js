@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
 let uploadedAvatarBase64 = '';
 
 function loadSettingsData() {
-  let currentUser = JSON.parse(localStorage.getItem('eventhub_current_user'));
-  
- 
-  currentUser = currentUser || { name: 'Guest User', email: 'guest@fci.**.edu.eg', year: 'Freshman', tracks: [] };
+  const currentUser = JSON.parse(localStorage.getItem('eventhub_current_user'));
+  if (!currentUser) {
+    currentUser = currentUser || { name: 'Guest User', email: 'guest@fcai.cu.edu.eg', year: 'Freshman', tracks: [] };
+  }
 
   const nameInput = document.getElementById('settings-name');
   if (nameInput) nameInput.value = currentUser.name || '';
@@ -61,15 +61,36 @@ function loadSettingsData() {
   if (seatsEl && settings.seats !== undefined) seatsEl.checked = settings.seats;
 }
 
+function handleImageUpload(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function (event) {
+    uploadedAvatarBase64 = event.target.result;
+    const avatarImg = document.getElementById('avatar-preview');
+    const avatarFallback = document.getElementById('avatar-fallback');
+
+    if (avatarImg && avatarFallback) {
+      avatarImg.src = uploadedAvatarBase64;
+      avatarImg.classList.remove('hidden');
+      avatarFallback.classList.add('hidden');
+    }
+  };
+  reader.readAsDataURL(file);
+}
+
 function saveProfileSettings(e) {
   e.preventDefault();
-  let currentUser = JSON.parse(localStorage.getItem('eventhub_current_user')) || { email: 'guest@fcai.cu.edu.eg' };
+  let currentUser = JSON.parse(localStorage.getItem('eventhub_current_user'));
+  if (!currentUser) return;
+
   let users = JSON.parse(localStorage.getItem('eventhub_users') || '[]');
 
   const nameEl = document.getElementById('settings-name');
   if (nameEl) currentUser.name = nameEl.value.trim();
 
-  const dobEl = document.getElementById('settings-dob');
+    const dobEl = document.getElementById('settings-dob');
   if (dobEl && dobEl.value) {
     const birthDate = new Date(dobEl.value);
     const today = new Date();
@@ -116,6 +137,21 @@ function saveProfileSettings(e) {
   showSettingsAlert('Profile settings updated successfully!');
 }
 
+function saveNotificationSettings() {
+  const remindersEl = document.getElementById('notify-reminders');
+  const alertsEl = document.getElementById('notify-alerts');
+  const seatsEl = document.getElementById('notify-seats');
+
+  const preferences = {
+    reminders: remindersEl ? remindersEl.checked : true,
+    alerts: alertsEl ? alertsEl.checked : true,
+    seats: seatsEl ? seatsEl.checked : false
+  };
+
+  localStorage.setItem('eventhub_notifications', JSON.stringify(preferences));
+  showSettingsAlert('Notification preferences saved.');
+}
+
 function showSettingsAlert(msg, isError = false) {
   const alertBox = document.getElementById('settings-alert');
   if (!alertBox) return;
@@ -131,6 +167,44 @@ function showSettingsAlert(msg, isError = false) {
   setTimeout(() => {
     alertBox.classList.add('hidden');
   }, 3500);
+}
+
+function downloadUserData() {
+  let currentUser = JSON.parse(localStorage.getItem('eventhub_current_user')) || {
+    name: 'Guest User',
+    email: 'guest@fcai.cu.edu.eg',
+    year: 'Freshman',
+    tracks: [],
+    bookings: []
+  };
+
+  const notificationSettings = JSON.parse(localStorage.getItem('eventhub_notifications') || '{}');
+
+  const exportData = {
+    exportedAt: new Date().toISOString(),
+    profile: {
+      name: currentUser.name || 'Guest User',
+      email: currentUser.email || 'guest@fcai.cu.edu.eg',
+      dob: currentUser.dob || 'Not provided',
+      gender: currentUser.gender || 'Not specified',
+      academicYear: currentUser.year || 'Freshman',
+      tracks: currentUser.tracks || [],
+      profilePic: currentUser.profilePic ? 'Base64 Encoded Image Included' : 'None'
+    },
+    notifications: notificationSettings,
+    bookingHistory: currentUser.bookings || []
+  };
+
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
+  const downloadAnchor = document.createElement('a');
+  downloadAnchor.setAttribute("href", dataStr);
+  const sanitizeName = (currentUser.name || 'user').toLowerCase().replace(/[^a-z0-9]/g, '_');
+  downloadAnchor.setAttribute("download", `findit_${sanitizeName}_data.json`);
+  document.body.appendChild(downloadAnchor);
+  downloadAnchor.click();
+  downloadAnchor.remove();
+
+  showSettingsAlert('Your profile and booking history JSON has been downloaded!');
 }
 
 function deleteAccount() {
@@ -152,4 +226,38 @@ function deleteAccount() {
   setTimeout(() => {
     window.location.href = 'index.html';
   }, 1200);
+}
+
+function switchSettingsTab(tabName) {
+  const profileSection = document.getElementById('profile-section');
+  const notifSection = document.getElementById('notifications-section');
+  const dangerSection = document.getElementById('danger-section');
+  
+  const profileBtn = document.getElementById('tab-profile-btn');
+  const notifBtn = document.getElementById('tab-notifications-btn');
+  
+  const activeClasses = 'bg-white border border-slate-200 dark:bg-slate-800 dark:border-slate-700/60 text-brand-600 dark:text-brand-400 shadow-sm'.split(' ');
+  const inactiveClasses = 'text-slate-600 hover:bg-slate-200/60 dark:text-slate-300 dark:hover:bg-slate-800/50 border-transparent'.split(' ');
+  
+  if (tabName === 'profile') {
+    profileSection.classList.remove('hidden');
+    dangerSection.classList.remove('hidden');
+    notifSection.classList.add('hidden');
+    
+    profileBtn.classList.remove(...inactiveClasses);
+    profileBtn.classList.add(...activeClasses);
+    
+    notifBtn.classList.remove(...activeClasses);
+    notifBtn.classList.add(...inactiveClasses);
+  } else if (tabName === 'notifications') {
+    notifSection.classList.remove('hidden');
+    profileSection.classList.add('hidden');
+    dangerSection.classList.add('hidden');
+    
+    notifBtn.classList.remove(...inactiveClasses);
+    notifBtn.classList.add(...activeClasses);
+    
+    profileBtn.classList.remove(...activeClasses);
+    profileBtn.classList.add(...inactiveClasses);
+  }
 }
