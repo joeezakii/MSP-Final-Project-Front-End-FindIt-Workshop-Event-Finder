@@ -155,3 +155,16 @@ function bookSeat(seatElemId, btnElem) {
     btnElem.classList.add('bg-slate-400', 'dark:bg-slate-700', 'cursor-not-allowed');
   }
 }
+
+function toggleDescription(btn) {
+  const p = btn.previousElementSibling;
+  if (p.classList.contains('line-clamp-2')) {
+    p.classList.remove('line-clamp-2');
+    p.classList.add('line-clamp-none');
+    btn.innerText = 'Show less';
+  } else {
+    p.classList.add('line-clamp-2');
+    p.classList.remove('line-clamp-none');
+    btn.innerText = 'Read more';
+  }
+}
