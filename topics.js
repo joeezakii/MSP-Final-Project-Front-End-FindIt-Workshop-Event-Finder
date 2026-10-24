@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (c === 'softskills' || c === 'presentation skills') {
         return { label: 'Presentation Skills', cls: 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20' };
       }
+      if (c === 'fintech' || c === 'Fintech') {
+        return { label: 'Fintech', cls: 'bg-slate-500/10 text-slate-600 dark:text-slate-400 border-slate-500/20' };
+      }
+      if (c === 'healthcare' || c === 'Healthcare') {
+        return { label: 'Healthcare', cls: 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20' };
+      }
       return { label: cat, cls: 'bg-slate-500/10 text-slate-600 dark:text-slate-400 border-slate-500/20' };
     }
 

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FindIt — Account Settings</title>
@@ -15,11 +18,15 @@
       <div class="flex items-center justify-between h-16">
         
         <div class="flex items-center gap-3">
-          <a href="home.html" class="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900 dark:text-white">
-            <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-brand-600 text-white font-black shadow-lg shadow-brand-500/30">
-              F
+          <a href="home.html" class="group flex items-center gap-2.5 transition-transform duration-200 hover:scale-[1.02]">
+            <div class="relative flex items-center justify-center w-10 h-10 rounded-2xl bg-gradient-to-br from-brand-500 via-brand-600 to-indigo-700 text-white shadow-lg shadow-brand-500/25 group-hover:shadow-brand-500/40 transition-all duration-300">
+              <svg class="w-5.5 h-5.5 text-white transform transition-transform duration-300 group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+            </div>
+            <span class="font-['Plus_Jakarta_Sans',sans-serif] text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center">
+              Find<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-indigo-500 ml-0.5">It</span>
             </span>
-            <span>Find<span class="text-brand-500">It</span></span>
           </a>
         </div>
 
@@ -114,7 +121,7 @@
 
           <form onsubmit="saveProfileSettings(event)" class="space-y-5">
 
-            <!-- Avatar Upload Row -->
+            
             <div class="flex items-center gap-6 pb-4 border-b border-slate-200 dark:border-slate-700/50">
               <div class="relative w-16 h-16 rounded-2xl overflow-hidden bg-brand-600 text-white flex items-center justify-center font-bold text-xl shadow-md shrink-0">
                 <img id="avatar-preview" src="" class="w-full h-full object-cover hidden" alt="Avatar" />
@@ -262,7 +269,7 @@
           </div>
         </section>
 
-  <section id="danger-section" class="bg-rose-50/50 border border-rose-200 dark:bg-rose-950/20 dark:border-rose-900/40 rounded-3xl p-6 sm:p-8 shadow-md transition">
+<section id="danger-section" class="bg-rose-50/50 border border-rose-200 dark:bg-rose-950/20 dark:border-rose-900/40 rounded-3xl p-6 sm:p-8 shadow-md transition">
           <h2 class="text-xl font-bold text-rose-600 dark:text-rose-400 border-b border-rose-200 dark:border-rose-900/40 pb-4 mb-4">
             Delete Your Account
           </h2>
@@ -281,6 +288,7 @@
           </button>
         </section>
       </div>
+
     </div>
   </main>
 

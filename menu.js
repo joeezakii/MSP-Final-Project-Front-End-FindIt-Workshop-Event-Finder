@@ -29,10 +29,65 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initSearchAndFilter();
-  syncBookedSeatsOnLoad();
+  syncSeatCountsAndState();
   checkAuthState();
   initBookingListeners();
 });
+
+function syncSeatCountsAndState() {
+  const seatCounts = JSON.parse(localStorage.getItem('eventhub_seat_counts') || '{}');
+  const currentUser = JSON.parse(localStorage.getItem('eventhub_current_user'));
+  const userBookings = currentUser && currentUser.bookings ? currentUser.bookings : [];
+
+  const seatBadges = document.querySelectorAll('[id^="seats-"]');
+
+  seatBadges.forEach(badge => {
+    const seatId = badge.id;
+    const isTeam = badge.innerText.includes('Teams');
+
+   
+    if (seatCounts.hasOwnProperty(seatId)) {
+      const count = seatCounts[seatId];
+      if (count <= 0) {
+        badge.innerText = 'No Seats Left';
+        badge.className = 'text-xs font-semibold text-rose-600 bg-rose-500/10 px-2.5 py-1 rounded-lg border border-rose-500/20 dark:text-rose-400';
+      } else {
+        badge.innerText = isTeam ? `${count} Teams Left` : `${count} Seats Left`;
+      }
+    } else {
+      // Save initial count from HTML if not yet saved
+      const match = badge.innerText.match(/\d+/);
+      if (match) {
+        seatCounts[seatId] = parseInt(match[0], 10);
+      }
+    }
+
+    // Check if the current user has booked this event
+    const card = badge.closest('[data-category]');
+    if (card) {
+      const h2 = card.querySelector('h2');
+      const eventTitle = h2 ? h2.innerText.trim() : '';
+      const isBooked = userBookings.some(b => b.eventSeatId === seatId || (b.title && b.title === eventTitle));
+
+      const bookBtn = card.querySelector('.book-seat-btn') || card.querySelector('button[data-seat-id]');
+      if (bookBtn) {
+        if (isBooked) {
+          bookBtn.innerText = 'Seat Booked ✓';
+          bookBtn.disabled = true;
+          bookBtn.classList.remove('bg-brand-600', 'hover:bg-brand-500');
+          bookBtn.classList.add('bg-slate-400', 'dark:bg-slate-700', 'cursor-not-allowed');
+        } else if (seatCounts[seatId] <= 0) {
+          bookBtn.innerText = 'No Seats Left';
+          bookBtn.disabled = true;
+          bookBtn.classList.remove('bg-brand-600', 'hover:bg-brand-500');
+          bookBtn.classList.add('bg-slate-400', 'dark:bg-slate-700', 'cursor-not-allowed');
+        }
+      }
+    }
+  });
+
+  localStorage.setItem('eventhub_seat_counts', JSON.stringify(seatCounts));
+}
 
 function initBookingListeners() {
   document.addEventListener('click', (e) => {
@@ -129,38 +184,6 @@ function initSearchAndFilter() {
   if (categorySelect) categorySelect.addEventListener('change', filterCards);
 }
 
-function syncBookedSeatsOnLoad() {
-  const currentUser = JSON.parse(localStorage.getItem('eventhub_current_user'));
-  if (!currentUser || !currentUser.bookings) return;
-
-  currentUser.bookings.forEach(booking => {
-    let card = null;
-    if (booking.eventSeatId) {
-      const seatElem = document.getElementById(booking.eventSeatId);
-      if (seatElem) card = seatElem.closest('[data-category]');
-    }
-
-    if (!card && booking.title) {
-      const headings = document.querySelectorAll('[data-category] h2');
-      headings.forEach(h2 => {
-        if (h2.innerText.trim() === booking.title) {
-          card = h2.closest('[data-category]');
-        }
-      });
-    }
-
-    if (card) {
-      const bookBtn = card.querySelector('.p-4 button') || card.querySelector('.book-seat-btn');
-      if (bookBtn) {
-        bookBtn.innerText = 'Seat Booked ✓';
-        bookBtn.disabled = true;
-        bookBtn.classList.remove('bg-brand-600', 'hover:bg-brand-500');
-        bookBtn.classList.add('bg-slate-400', 'dark:bg-slate-700', 'cursor-not-allowed');
-      }
-    }
-  });
-}
-
 function bookSeat(seatElemId, btnElem) {
   const currentUser = JSON.parse(localStorage.getItem('eventhub_current_user'));
   if (!currentUser) {
@@ -200,18 +223,25 @@ function bookSeat(seatElemId, btnElem) {
     return;
   }
 
-  if (seatElem) {
-    let currentText = seatElem.innerText;
-    let matches = currentText.match(/\d+/);
-    if (matches) {
-      let count = parseInt(matches[0], 10);
-      if (count <= 0) {
+  // Load seat counts from localStorage
+  const seatCounts = JSON.parse(localStorage.getItem('eventhub_seat_counts') || '{}');
+
+  if (seatElemId) {
+    let currentCount = seatCounts.hasOwnProperty(seatElemId) ? seatCounts[seatElemId] : null;
+    
+    if (currentCount === null && seatElem) {
+      let matches = seatElem.innerText.match(/\d+/);
+      if (matches) currentCount = parseInt(matches[0], 10);
+    }
+
+    if (currentCount !== null) {
+      if (currentCount <= 0) {
         showToastMessage('Sorry, no seats remaining for this event!', true);
         return;
       }
-      count--;
-      const label = currentText.includes('Teams') ? `${count} Teams Left` : `${count} Seats Left`;
-      seatElem.innerText = label;
+      currentCount--;
+      seatCounts[seatElemId] = currentCount;
+      localStorage.setItem('eventhub_seat_counts', JSON.stringify(seatCounts));
     }
   }
 
@@ -234,14 +264,8 @@ function bookSeat(seatElemId, btnElem) {
     localStorage.setItem('eventhub_users', JSON.stringify(users));
   }
 
-  if (btnElem) {
-    btnElem.innerText = 'Seat Booked ✓';
-    btnElem.disabled = true;
-    btnElem.classList.remove('bg-brand-600', 'hover:bg-brand-500');
-    btnElem.classList.add('bg-slate-400', 'dark:bg-slate-700', 'cursor-not-allowed');
-  }
-
   showToastMessage('Seat successfully booked!', false);
+  syncSeatCountsAndState();
 }
 
 function showToastMessage(message, isError = true) {
