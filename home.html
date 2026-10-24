@@ -163,9 +163,15 @@
 
           <div class="space-y-2 border-t border-slate-200 dark:border-slate-700/50 pt-4 text-xs text-slate-600 dark:text-slate-300">
             <div class="flex items-center gap-2">
+               <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
               <span>Nov 10, 2026 • 01:00 PM</span>
             </div>
             <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              </svg>
               <span>Hall 7, FCAI Cairo University</span>
             </div>
           </div>
@@ -173,7 +179,7 @@
 
         <div class="p-4 bg-slate-50 border-t border-slate-200 dark:bg-slate-800/80 dark:border-slate-700/50 transition">
           <button 
-            onclick="bookSeat('seats-event-1', this)" 
+            type="button" data-seat-id="seats-event-1" class="book-seat-btn w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20" 
             class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20"
           >
             Book Seat
@@ -204,16 +210,22 @@
 
           <div class="space-y-2 border-t border-slate-200 dark:border-slate-700/50 pt-4 text-xs text-slate-600 dark:text-slate-300">
             <div class="flex items-center gap-2">
+               <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
               <span>Nov 18, 2026 • 03:00 PM</span>
             </div>
             <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              </svg>
               <span>Main Auditorium</span>
             </div>
           </div>
         </div>
 
         <div class="p-4 bg-slate-50 border-t border-slate-200 dark:bg-slate-800/80 dark:border-slate-700/50 transition">
-          <button onclick="bookSeat('seats-event-2', this)" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20">
+          <button type="button" data-seat-id="seats-event-2" class="book-seat-btn w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20">
             Book Seat
           </button>
         </div>
@@ -234,7 +246,7 @@
             <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">NextGen Hackathon 2026</h2>
             <div class="mb-4">
             <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 ">
-              An 8-hour rapid prototyping competition bringing student developers and designers together to build impactful products.
+              An 8-hour intense prototyping competition bringing student developers and designers together to build impactful products.
             </p>
             <button type="button" onclick="toggleDescription(this)" class="text-xs text-brand-600 hover:text-brand-500 dark:text-brand-400 font-medium mt-1 transition focus:outline-none">Read more</button>
           </div>
@@ -242,16 +254,22 @@
 
           <div class="space-y-2 border-t border-slate-200 dark:border-slate-700/50 pt-4 text-xs text-slate-600 dark:text-slate-300">
             <div class="flex items-center gap-2">
+               <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
               <span>Dec 01, 2026 • 09:00 AM</span>
             </div>
             <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              </svg>
               <span>Creativa Giza Innovation Hub</span>
             </div>
           </div>
         </div>
 
         <div class="p-4 bg-slate-50 border-t border-slate-200 dark:bg-slate-800/80 dark:border-slate-700/50 transition">
-          <button onclick="bookSeat('seats-event-3', this)" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20">
+          <button type="button" data-seat-id="seats-event-3" class="book-seat-btn w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20">
             Book Seat
           </button>
         </div>
@@ -280,16 +298,22 @@
 
           <div class="space-y-2 border-t border-slate-200 dark:border-slate-700/50 pt-4 text-xs text-slate-600 dark:text-slate-300">
             <div class="flex items-center gap-2">
+               <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
               <span>Dec 08, 2026 • 12:00 PM</span>
             </div>
             <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              </svg>
               <span>Seminar Room B</span>
             </div>
           </div>
         </div>
 
         <div class="p-4 bg-slate-50 border-t border-slate-200 dark:bg-slate-800/80 dark:border-slate-700/50 transition">
-          <button onclick="bookSeat('seats-event-4', this)" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20">
+          <button type="button" data-seat-id="seats-event-4" class="book-seat-btn w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20" class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-md shadow-brand-600/20">
             Book Seat
           </button>
         </div>

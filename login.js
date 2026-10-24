@@ -169,11 +169,26 @@ function handleLogin(e) {
   const password = document.getElementById('login-password').value;
 
   let users = JSON.parse(localStorage.getItem('eventhub_users') || '[]');
+  
+  // Clean up any corrupted bookings missing a title across all saved users
+  users = users.map(u => {
+    if (u.bookings && Array.isArray(u.bookings)) {
+      u.bookings = u.bookings.filter(b => b && b.title && b.title !== 'undefined');
+    }
+    return u;
+  });
+  localStorage.setItem('eventhub_users', JSON.stringify(users));
+
   const user = users.find(u => u.email === email && u.password === password);
 
   if (!user) {
     showAlert('Invalid email or password.', true);
     return;
+  }
+
+  // Extra safety filter for the logging in user
+  if (user.bookings && Array.isArray(user.bookings)) {
+    user.bookings = user.bookings.filter(b => b && b.title && b.title !== 'undefined');
   }
 
   localStorage.setItem('eventhub_current_user', JSON.stringify(user));
@@ -242,4 +257,3 @@ function togglePasswordVisibility(inputId, eyeIconId) {
     eyeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />`;
   }
 }
-
