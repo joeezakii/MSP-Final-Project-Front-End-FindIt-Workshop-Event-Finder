@@ -1,0 +1,342 @@
+{
+  "events": [
+    {
+      "id": "evt_001",
+      "category": "business",
+      "badge_color": "emerald",
+      "title": "How to Close Deals & Negotiate",
+      "short_description": "Master corporate communication tactics...",
+      "full_description": "Master corporate communication tactics, strategic negotiation skills, and closing deal techniques for student leaders and entrepreneurs. This immersive event covers everything from initial stakeholder contact to final contract execution.",
+      "date": "2026-11-10",
+      "time": "01:00 PM",
+      "location": "Hall 7, FCAI Cairo University",
+      "available_seats": 25,
+      "speakers": [
+        {
+          "name": "Marwan Saleh",
+          "role": "VP of Sales",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp7lykxg_I7EG4OxpDF7dK4sRwHA18Lj6_GiurFaibXbHlASpVyuID5DyZ&s=10",
+          "bio": "Leading global sales initiatives, Marwan specializes in high-stakes contract negotiations and cross-border partnership agreements."
+        },
+        {
+          "name": "Salma Hassan",
+          "role": "Corporate Lawyer",
+          "image": "https://ui-avatars.com/api/?name=Salma+Hassan&background=f43f5e&color=fff&size=128",
+          "bio": "Advises top-tier firms on the legal frameworks of corporate negotiations, ensuring airtight contracts and mutually beneficial terms."
+        },
+        {
+          "name": "Abdullah Hamed",
+          "role": "Senior Negotiator",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5HLInK34hKpmZZv8GebDM4p-jfhyw9wt7bPzIvVy-e1hL-R6hJNK8bA7S&s=10",
+          "bio": "Experienced businessman with 10 years of closing deals between B2B companies alongside 3 years of recent expertise in negotiating deals with customers reaching challenging objectives in B2C corporations."
+        },
+        {
+          "name": "Tarek Youssef",
+          "role": "B2B Strategist",
+          "image": "https://ui-avatars.com/api/?name=Tarek+Youssef&background=64748b&color=fff&size=128",
+          "bio": "Focuses on strategic enterprise acquisitions and has successfully mentored over 50 startups in closing their seed funding rounds."
+        },
+        {
+          "name": "Nourhan Ali",
+          "role": "PR Director",
+          "image": "https://ui-avatars.com/api/?name=Nourhan+Ali&background=64748b&color=fff&size=128",
+          "bio": "With over 8 years in public relations, Nourhan expertly navigates stakeholder communication and brand messaging during critical deal closures."
+        }
+      ]
+    },
+    {
+      "id": "evt_002",
+      "category": "ai",
+      "badge_color": "purple",
+      "title": "How to Use AI in the Modern World",
+      "short_description": "Explore prompt engineering, LLM integration, and real-world AI tools...",
+      "full_description": "Explore prompt engineering, LLM integration, and real-world AI tools transforming academic research and daily developer productivity. Join industry leaders as they decode the future of generative AI.",
+      "date": "2026-11-18",
+      "time": "03:00 PM",
+      "location": "Prof. Ibrahim Farag Hall (2nd floor in FCAI Cairo University Campus)",
+      "available_seats": 18,
+      "speakers": [
+        {
+          "name": "Mona Adel",
+          "role": "AI Product Manager",
+          "image": "https://ui-avatars.com/api/?name=Mona+Adel&background=64748b&color=fff&size=128",
+          "bio": "Leads the development of consumer-facing AI tools, ensuring that complex neural networks translate into intuitive user experiences."
+        },
+        {
+          "name": "Laila Mahmoud",
+          "role": "Machine Learning Engineer",
+          "image": "https://ui-avatars.com/api/?name=Laila+Mahmoud&background=f59e0b&color=fff&size=128",
+          "bio": "Builds scalable AI pipelines and specializes in deploying generative models that boost developer productivity by over 40%."
+        },
+        {
+          "name": "Omar Zaki",
+          "role": "Data Scientist",
+          "image": "https://ui-avatars.com/api/?name=Omar+Zaki&background=f43f5e&color=fff&size=128",
+          "bio": "Leverages advanced predictive algorithms to solve real-world industry problems, bridging the gap between raw data and actionable AI solutions."
+        }
+      ]
+    },
+    {
+      "id": "evt_003",
+      "category": "hackathon",
+      "badge_color": "amber",
+      "title": "NextGen Hackathon 2026",
+      "short_description": "An 8-hour rapid prototyping competition bringing student developers...",
+      "full_description": "An 8-hour rapid prototyping competition bringing student developers and designers together to build impactful products. Mentors will be available on-site to guide you from ideation to final pitch.",
+      "date": "2026-12-01",
+      "time": "09:00 AM",
+      "location": "Creativa Giza Innovation Hub",
+      "available_seats": 8,
+      "speakers": [
+        {
+          "name": "Seif El-Din",
+          "role": "Cloud Architect",
+          "image": "https://ui-avatars.com/api/?name=Seif+El-Din&background=f43f5e&color=fff&size=128",
+          "bio": "Assists competing teams with deploying their applications instantly to the cloud, ensuring their live demos run without a hitch."
+        },
+        {
+          "name": "Hala Mounir",
+          "role": "UX/UI Design Mentor",
+          "image": "https://ui-avatars.com/api/?name=Hala+Mounir&background=f43f5e&color=fff&size=128",
+          "bio": "Ensures that hackathon projects don't just work in the backend, but also deliver seamless and accessible user interfaces."
+        },
+        {
+          "name": "Rami Fouad",
+          "role": "Hackathon Lead Judge",
+          "image": "https://ui-avatars.com/api/?name=Rami+Fouad&background=10b981&color=fff&size=128",
+          "bio": "A veteran in the startup ecosystem, Rami has judged over 30 hackathons and focuses on product viability and innovative problem-solving."
+        }
+      ]
+    },
+    {
+      "id": "evt_004",
+      "category": "softskills",
+      "badge_color": "sky",
+      "title": "How to Present Your Ideas",
+      "short_description": "Learn presentation skills, how to present your ideas across an audience...",
+      "full_description": "Learn presentation skills, how to present your ideas across an audience, and the confidence to speak and pitch technical projects effectively. Perfect for final-year students preparing for graduation projects.",
+      "date": "2026-12-08",
+      "time": "12:00 PM",
+      "location": "Prof. Al Shafei Hall (1st Floor in FCAI Cairo University Campus)",
+      "available_seats": 14,
+      "speakers": [
+        {
+          "name": "Farida Gomaa",
+          "role": "Communications Coach",
+          "image": "https://ui-avatars.com/api/?name=Farida+Gomaa&background=f59e0b&color=fff&size=128",
+          "bio": "Dedicated to helping STEM students translate complex technical jargon into compelling narratives that captivate non-technical audiences."
+        },
+        {
+          "name": "Amr Hesham",
+          "role": "Public Speaking Expert",
+          "image": "https://ui-avatars.com/api/?name=Amr+Hesham&background=8b5cf6&color=fff&size=128",
+          "bio": "An award-winning Toastmaster who teaches proven techniques to conquer stage fright and command a room with body language."
+        },
+        {
+          "name": "Yasmine Tarek",
+          "role": "Storytelling Consultant",
+          "image": "https://ui-avatars.com/api/?name=Yasmine+Tarek&background=8b5cf6&color=fff&size=128",
+          "bio": "Believes every great project has a story. She guides students in structuring their presentations with a clear beginning, middle, and impactful end."
+        },
+        {
+          "name": "Khaled Omar",
+          "role": "Executive Presence Trainer",
+          "image": "https://ui-avatars.com/api/?name=Khaled+Omar&background=8b5cf6&color=fff&size=128",
+          "bio": "Works with future leaders to develop a strong, authoritative voice and the confidence to handle tough Q&A sessions."
+        },
+        {
+          "name": "Nadia Fathy",
+          "role": "Pitch Deck Specialist",
+          "image": "https://ui-avatars.com/api/?name=Nadia+Fathy&background=f59e0b&color=fff&size=128",
+          "bio": "Focuses on the visual storytelling aspect of presentations, showing students how to design slides that highlight their core message."
+        }
+      ]
+    },
+    {
+      "id": "evt_005",
+      "category": "fintech",
+      "badge_color": "slate",
+      "title": "The Day in the Life of a Fintech Employee",
+      "short_description": "A quick talk about the future of the Fintech industry...",
+      "full_description": "A quick talk about the future of the Fintech industry, and the workflow process that occurs in a Fintech environment. Understand the intersection of finance and software engineering.",
+      "date": "2026-10-29",
+      "time": "09:00 AM",
+      "location": "Creativa Giza Innovation Hub",
+      "available_seats": 4,
+      "speakers": [
+        {
+          "name": "Farah Ziyad",
+          "role": "Compliance Tech Lead",
+          "image": "https://ui-avatars.com/api/?name=Farah+Ziyad&background=64748b&color=fff&size=128",
+          "bio": "Ensures that financial software architectures adhere strictly to global security standards and anti-money laundering (AML) laws."
+        },
+        {
+          "name": "Reem Wael",
+          "role": "Blockchain Analyst",
+          "image": "https://ui-avatars.com/api/?name=Reem+Wael&background=f59e0b&color=fff&size=128",
+          "bio": "Deeply embedded in decentralized finance (DeFi), Reem explores how blockchain is disrupting traditional banking infrastructures."
+        },
+        {
+          "name": "Mahmoud Naser",
+          "role": "Financial Engineer",
+          "image": "https://ui-avatars.com/api/?name=Mahmoud+Naser&background=f43f5e&color=fff&size=128",
+          "bio": "Designs complex algorithms for high-frequency trading and risk management, showcasing the heavy math behind fintech operations."
+        },
+        {
+          "name": "Tarek Mansour",
+          "role": "Payment Gateway Developer",
+          "image": "https://ui-avatars.com/api/?name=Tarek+Mansour&background=10b981&color=fff&size=128",
+          "bio": "Builds secure, scalable payment processing systems handling millions of transactions daily across the MENA region."
+        },
+        {
+          "name": "Hazem Shawky",
+          "role": "Fintech Product Manager",
+          "image": "https://ui-avatars.com/api/?name=Hazem+Shawky&background=0284c7&color=fff&size=128",
+          "bio": "Oversees the lifecycle of mobile banking apps, bridging the gap between stringent financial regulations and agile software development."
+        }
+      ]
+    },
+    {
+      "id": "evt_006",
+      "category": "healthcare",
+      "badge_color": "rose",
+      "title": "Technology Advancements in the Healthcare Industry",
+      "short_description": "Specialised physicians and surgeons highlight the importance of tech...",
+      "full_description": "Specialised physicians and surgeons highlight the importance of tech-based systems in modern medicine. From robotic surgeries to AI-driven diagnostics, see how code saves lives.",
+      "date": "2026-10-29",
+      "time": "09:00 AM",
+      "location": "Creativa Giza Innovation Hub",
+      "available_seats": 8,
+      "speakers": [
+        {
+          "name": "Dr. Mostafa Kamel",
+          "role": "Robotic Surgery Specialist",
+          "image": "https://ui-avatars.com/api/?name=Dr.+Mostafa+Kamel&background=64748b&color=fff&size=128",
+          "bio": "A leading surgeon who advocates for and trains peers in utilizing highly precise robotic systems for minimally invasive procedures."
+        },
+        {
+          "name": "Ahmed El-Sayed",
+          "role": "Health-Tech Entrepreneur",
+          "image": "https://ui-avatars.com/api/?name=Ahmed+El-Sayed&background=0284c7&color=fff&size=128",
+          "bio": "Founder of a startup that utilizes machine learning to accelerate early cancer detection from MRI and CT scans."
+        },
+        {
+          "name": "Dr. Sherif Amin",
+          "role": "Chief Medical Information Officer",
+          "image": "https://ui-avatars.com/api/?name=Dr.+Sherif+Amin&background=0284c7&color=fff&size=128",
+          "bio": "Integrates advanced electronic health record (EHR) systems into hospital workflows to improve patient outcomes and data accessibility."
+        }
+      ]
+    }
+  ],
+  "workshops": [
+    {
+      "id": "ws_001",
+      "category": "web",
+      "badge_color": "brand",
+      "title": "Modern Front-End Systems",
+      "short_description": "Learn how to convert real-life ideas into a structured, well-designed website using CSS, HTML5, JavaScript and React.",
+      "full_description": "Learn how to convert real-life ideas into a structured, well-designed website using CSS, HTML5, JavaScript and React. This hands-on lab takes you from wireframes to a fully deployed web application.",
+      "date": "2026-11-15",
+      "time": "04:00 PM",
+      "location": "Lab 8, 'New Building' (3rd floor) inside the FCAI Cairo University campus.",
+      "available_seats": 12,
+      "speakers": [
+        {
+          "name": "Mariam Sobhy",
+          "role": "UI/UX Designer",
+          "image": "https://ui-avatars.com/api/?name=Mariam+Sobhy&background=f43f5e&color=fff&size=128",
+          "bio": "Brings designs to life using Tailwind CSS and ensures that every pixel is accessible, responsive, and visually stunning."
+        },
+        {
+          "name": "Hassan Eid",
+          "role": "Senior Front-End Developer",
+          "image": "https://ui-avatars.com/api/?name=Hassan+Eid&background=0284c7&color=fff&size=128",
+          "bio": "A React and Next.js enthusiast who loves teaching the fundamentals of state management and component-driven architecture."
+        },
+        {
+          "name": "Aya Fathy",
+          "role": "JavaScript Architect",
+          "image": "https://ui-avatars.com/api/?name=Aya+Fathy&background=f43f5e&color=fff&size=128",
+          "bio": "Deep dives into vanilla JS mechanics before abstracting them with frameworks, giving students a solid programming foundation."
+        },
+        {
+          "name": "Omar Bahaa",
+          "role": "Full-Stack Instructor",
+          "image": "https://ui-avatars.com/api/?name=Omar+Bahaa&background=f59e0b&color=fff&size=128",
+          "bio": "Connects the dots between the front-end interface and back-end APIs, showing how data seamlessly flows through modern web systems."
+        },
+        {
+          "name": "Kareem Hisham",
+          "role": "Web Performance Expert",
+          "image": "https://ui-avatars.com/api/?name=Kareem+Hisham&background=64748b&color=fff&size=128",
+          "bio": "Focuses on optimizing web assets, reducing bundle sizes, and achieving perfect Lighthouse scores for modern applications."
+        }
+      ]
+    },
+    {
+      "id": "ws_002",
+      "category": "ai",
+      "badge_color": "purple",
+      "title": "Intro to Computer Vision",
+      "short_description": "Hands-on workshop covering landmark detection, OpenCV pipelines...",
+      "full_description": "Hands-on workshop covering landmark detection, OpenCV pipelines, and image preprocessing. Build your first facial recognition model from scratch in this intensive session.",
+      "date": "2026-11-20",
+      "time": "02:00 PM",
+      "location": "Main Auditorium",
+      "available_seats": 5,
+      "speakers": [
+        {
+          "name": "Youssef Zaki",
+          "role": "Computer Vision Researcher",
+          "image": "https://ui-avatars.com/api/?name=Youssef+Zaki&background=f43f5e&color=fff&size=128",
+          "bio": "Specializes in spatio-temporal models and joint tracking. Currently researching Arabic Sign Language recognition using the KArSL dataset."
+        },
+        {
+          "name": "Tariq Riad",
+          "role": "MediaPipe Developer",
+          "image": "https://ui-avatars.com/api/?name=Tariq+Riad&background=8b5cf6&color=fff&size=128",
+          "bio": "Shows how to leverage Google's MediaPipe framework for real-time, cross-platform video and audio ML solutions."
+        },
+        {
+          "name": "Nada Samir",
+          "role": "OpenCV Specialist",
+          "image": "https://ui-avatars.com/api/?name=Nada+Samir&background=8b5cf6&color=fff&size=128",
+          "bio": "An expert in building robust image processing pipelines, Nada teaches the critical steps of filtering, edge detection, and thresholding."
+        }
+      ]
+    },
+    {
+      "id": "ws_003",
+      "category": "cyber",
+      "badge_color": "amber",
+      "title": "Network Security Basics",
+      "short_description": "Explore packet inspection, firewall configuration, and common vulnerability...",
+      "full_description": "Explore packet inspection, firewall configuration, and common vulnerability scanning tools, by learning tools like Kali Linux, Advanced Python Frameworks, and introducing students to TryHackMe building their Cybersecurity portfolio!",
+      "date": "2026-12-02",
+      "time": "10:00 AM",
+      "location": "Online Session",
+      "available_seats": 0,
+      "speakers": [
+        {
+          "name": "Dina El-Sayed",
+          "role": "Security Analyst",
+          "image": "https://ui-avatars.com/api/?name=Dina+El-Sayed&background=10b981&color=fff&size=128",
+          "bio": "Monitors network traffic for anomalies and teaches the basics of using Wireshark for deep packet inspection and threat hunting."
+        },
+        {
+          "name": "Rana Yasser",
+          "role": "TryHackMe Mentor",
+          "image": "https://ui-avatars.com/api/?name=Rana+Yasser&background=f43f5e&color=fff&size=128",
+          "bio": "Guides beginners through the TryHackMe platform, curating customized learning paths to quickly build practical cybersecurity skills."
+        },
+        {
+          "name": "Nour El-Din",
+          "role": "Cryptography Expert",
+          "image": "https://ui-avatars.com/api/?name=Nour+El-Din&background=8b5cf6&color=fff&size=128",
+          "bio": "Breaks down complex encryption algorithms into digestible concepts, ensuring students understand how data is secured in transit and at rest."
+        }
+      ]
+    }
+  ]
+}
