@@ -21,7 +21,7 @@
         {
           "name": "Salma Hassan",
           "role": "Corporate Lawyer",
-          "image": "https://ui-avatars.com/api/?name=Salma+Hassan&background=f43f5e&color=fff&size=128",
+          "image": "https://img.magnific.com/free-photo/happy-successful-muslim-businesswoman-posing-outside_74855-2007.jpg?semt=ais_hybrid&w=740&q=80",
           "bio": "Advises top-tier firms on the legal frameworks of corporate negotiations, ensuring airtight contracts and mutually beneficial terms."
         },
         {
@@ -33,18 +33,18 @@
         {
           "name": "Tarek Youssef",
           "role": "B2B Strategist",
-          "image": "https://ui-avatars.com/api/?name=Tarek+Youssef&background=64748b&color=fff&size=128",
+          "image": "https://i.pinimg.com/736x/28/5c/bc/285cbc423be04a5f4f9795f3b301006b.jpg",
           "bio": "Focuses on strategic enterprise acquisitions and has successfully mentored over 50 startups in closing their seed funding rounds."
         },
         {
           "name": "Nourhan Ali",
           "role": "PR Director",
-          "image": "https://ui-avatars.com/api/?name=Nourhan+Ali&background=64748b&color=fff&size=128",
+          "image": "https://img.magnific.com/premium-photo/portrait-beautiful-hijab-business-woman-stylish-colored-suit_1091270-55963.jpg?semt=ais_hybrid&w=740&q=80",
           "bio": "With over 8 years in public relations, Nourhan expertly navigates stakeholder communication and brand messaging during critical deal closures."
         }
       ]
     },
-    {
+        {
       "id": "evt_002",
       "category": "ai",
       "badge_color": "purple",
@@ -59,19 +59,19 @@
         {
           "name": "Mona Adel",
           "role": "AI Product Manager",
-          "image": "https://ui-avatars.com/api/?name=Mona+Adel&background=64748b&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
           "bio": "Leads the development of consumer-facing AI tools, ensuring that complex neural networks translate into intuitive user experiences."
         },
         {
           "name": "Laila Mahmoud",
           "role": "Machine Learning Engineer",
-          "image": "https://ui-avatars.com/api/?name=Laila+Mahmoud&background=f59e0b&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop",
           "bio": "Builds scalable AI pipelines and specializes in deploying generative models that boost developer productivity by over 40%."
         },
         {
           "name": "Omar Zaki",
           "role": "Data Scientist",
-          "image": "https://ui-avatars.com/api/?name=Omar+Zaki&background=f43f5e&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=600&auto=format&fit=crop",
           "bio": "Leverages advanced predictive algorithms to solve real-world industry problems, bridging the gap between raw data and actionable AI solutions."
         }
       ]
@@ -91,19 +91,19 @@
         {
           "name": "Seif El-Din",
           "role": "Cloud Architect",
-          "image": "https://ui-avatars.com/api/?name=Seif+El-Din&background=f43f5e&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=600&auto=format&fit=crop",
           "bio": "Assists competing teams with deploying their applications instantly to the cloud, ensuring their live demos run without a hitch."
         },
         {
           "name": "Hala Mounir",
           "role": "UX/UI Design Mentor",
-          "image": "https://ui-avatars.com/api/?name=Hala+Mounir&background=f43f5e&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
           "bio": "Ensures that hackathon projects don't just work in the backend, but also deliver seamless and accessible user interfaces."
         },
         {
           "name": "Rami Fouad",
           "role": "Hackathon Lead Judge",
-          "image": "https://ui-avatars.com/api/?name=Rami+Fouad&background=10b981&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop",
           "bio": "A veteran in the startup ecosystem, Rami has judged over 30 hackathons and focuses on product viability and innovative problem-solving."
         }
       ]
@@ -123,31 +123,31 @@
         {
           "name": "Farida Gomaa",
           "role": "Communications Coach",
-          "image": "https://ui-avatars.com/api/?name=Farida+Gomaa&background=f59e0b&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop",
           "bio": "Dedicated to helping STEM students translate complex technical jargon into compelling narratives that captivate non-technical audiences."
         },
         {
           "name": "Amr Hesham",
           "role": "Public Speaking Expert",
-          "image": "https://ui-avatars.com/api/?name=Amr+Hesham&background=8b5cf6&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop",
           "bio": "An award-winning Toastmaster who teaches proven techniques to conquer stage fright and command a room with body language."
         },
         {
           "name": "Yasmine Tarek",
           "role": "Storytelling Consultant",
-          "image": "https://ui-avatars.com/api/?name=Yasmine+Tarek&background=8b5cf6&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=600&auto=format&fit=crop",
           "bio": "Believes every great project has a story. She guides students in structuring their presentations with a clear beginning, middle, and impactful end."
         },
         {
           "name": "Khaled Omar",
           "role": "Executive Presence Trainer",
-          "image": "https://ui-avatars.com/api/?name=Khaled+Omar&background=8b5cf6&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=600&auto=format&fit=crop",
           "bio": "Works with future leaders to develop a strong, authoritative voice and the confidence to handle tough Q&A sessions."
         },
         {
           "name": "Nadia Fathy",
           "role": "Pitch Deck Specialist",
-          "image": "https://ui-avatars.com/api/?name=Nadia+Fathy&background=f59e0b&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop",
           "bio": "Focuses on the visual storytelling aspect of presentations, showing students how to design slides that highlight their core message."
         }
       ]
@@ -167,31 +167,31 @@
         {
           "name": "Farah Ziyad",
           "role": "Compliance Tech Lead",
-          "image": "https://ui-avatars.com/api/?name=Farah+Ziyad&background=64748b&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=600&auto=format&fit=crop",
           "bio": "Ensures that financial software architectures adhere strictly to global security standards and anti-money laundering (AML) laws."
         },
         {
           "name": "Reem Wael",
           "role": "Blockchain Analyst",
-          "image": "https://ui-avatars.com/api/?name=Reem+Wael&background=f59e0b&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=600&auto=format&fit=crop",
           "bio": "Deeply embedded in decentralized finance (DeFi), Reem explores how blockchain is disrupting traditional banking infrastructures."
         },
         {
           "name": "Mahmoud Naser",
           "role": "Financial Engineer",
-          "image": "https://ui-avatars.com/api/?name=Mahmoud+Naser&background=f43f5e&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=600&auto=format&fit=crop",
           "bio": "Designs complex algorithms for high-frequency trading and risk management, showcasing the heavy math behind fintech operations."
         },
         {
           "name": "Tarek Mansour",
           "role": "Payment Gateway Developer",
-          "image": "https://ui-avatars.com/api/?name=Tarek+Mansour&background=10b981&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop",
           "bio": "Builds secure, scalable payment processing systems handling millions of transactions daily across the MENA region."
         },
         {
           "name": "Hazem Shawky",
           "role": "Fintech Product Manager",
-          "image": "https://ui-avatars.com/api/?name=Hazem+Shawky&background=0284c7&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop",
           "bio": "Oversees the lifecycle of mobile banking apps, bridging the gap between stringent financial regulations and agile software development."
         }
       ]
@@ -211,19 +211,19 @@
         {
           "name": "Dr. Mostafa Kamel",
           "role": "Robotic Surgery Specialist",
-          "image": "https://ui-avatars.com/api/?name=Dr.+Mostafa+Kamel&background=64748b&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=600&auto=format&fit=crop",
           "bio": "A leading surgeon who advocates for and trains peers in utilizing highly precise robotic systems for minimally invasive procedures."
         },
         {
           "name": "Ahmed El-Sayed",
           "role": "Health-Tech Entrepreneur",
-          "image": "https://ui-avatars.com/api/?name=Ahmed+El-Sayed&background=0284c7&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop",
           "bio": "Founder of a startup that utilizes machine learning to accelerate early cancer detection from MRI and CT scans."
         },
         {
           "name": "Dr. Sherif Amin",
           "role": "Chief Medical Information Officer",
-          "image": "https://ui-avatars.com/api/?name=Dr.+Sherif+Amin&background=0284c7&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop",
           "bio": "Integrates advanced electronic health record (EHR) systems into hospital workflows to improve patient outcomes and data accessibility."
         }
       ]
@@ -245,31 +245,31 @@
         {
           "name": "Mariam Sobhy",
           "role": "UI/UX Designer",
-          "image": "https://ui-avatars.com/api/?name=Mariam+Sobhy&background=f43f5e&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
           "bio": "Brings designs to life using Tailwind CSS and ensures that every pixel is accessible, responsive, and visually stunning."
         },
         {
           "name": "Hassan Eid",
           "role": "Senior Front-End Developer",
-          "image": "https://ui-avatars.com/api/?name=Hassan+Eid&background=0284c7&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop",
           "bio": "A React and Next.js enthusiast who loves teaching the fundamentals of state management and component-driven architecture."
         },
         {
           "name": "Aya Fathy",
           "role": "JavaScript Architect",
-          "image": "https://ui-avatars.com/api/?name=Aya+Fathy&background=f43f5e&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
           "bio": "Deep dives into vanilla JS mechanics before abstracting them with frameworks, giving students a solid programming foundation."
         },
         {
           "name": "Omar Bahaa",
           "role": "Full-Stack Instructor",
-          "image": "https://ui-avatars.com/api/?name=Omar+Bahaa&background=f59e0b&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop",
           "bio": "Connects the dots between the front-end interface and back-end APIs, showing how data seamlessly flows through modern web systems."
         },
         {
           "name": "Kareem Hisham",
           "role": "Web Performance Expert",
-          "image": "https://ui-avatars.com/api/?name=Kareem+Hisham&background=64748b&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=600&auto=format&fit=crop",
           "bio": "Focuses on optimizing web assets, reducing bundle sizes, and achieving perfect Lighthouse scores for modern applications."
         }
       ]
@@ -287,21 +287,21 @@
       "available_seats": 5,
       "speakers": [
         {
-          "name": "Youssef Zaki",
+          "name": "Ahmed Sobhy",
           "role": "Computer Vision Researcher",
-          "image": "https://ui-avatars.com/api/?name=Youssef+Zaki&background=f43f5e&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=600&auto=format&fit=crop",
           "bio": "Specializes in spatio-temporal models and joint tracking. Currently researching Arabic Sign Language recognition using the KArSL dataset."
         },
         {
           "name": "Tariq Riad",
           "role": "MediaPipe Developer",
-          "image": "https://ui-avatars.com/api/?name=Tariq+Riad&background=8b5cf6&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop",
           "bio": "Shows how to leverage Google's MediaPipe framework for real-time, cross-platform video and audio ML solutions."
         },
         {
           "name": "Nada Samir",
           "role": "OpenCV Specialist",
-          "image": "https://ui-avatars.com/api/?name=Nada+Samir&background=8b5cf6&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop",
           "bio": "An expert in building robust image processing pipelines, Nada teaches the critical steps of filtering, edge detection, and thresholding."
         }
       ]
@@ -321,19 +321,19 @@
         {
           "name": "Dina El-Sayed",
           "role": "Security Analyst",
-          "image": "https://ui-avatars.com/api/?name=Dina+El-Sayed&background=10b981&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop",
           "bio": "Monitors network traffic for anomalies and teaches the basics of using Wireshark for deep packet inspection and threat hunting."
         },
         {
           "name": "Rana Yasser",
           "role": "TryHackMe Mentor",
-          "image": "https://ui-avatars.com/api/?name=Rana+Yasser&background=f43f5e&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=600&auto=format&fit=crop",
           "bio": "Guides beginners through the TryHackMe platform, curating customized learning paths to quickly build practical cybersecurity skills."
         },
         {
           "name": "Nour El-Din",
           "role": "Cryptography Expert",
-          "image": "https://ui-avatars.com/api/?name=Nour+El-Din&background=8b5cf6&color=fff&size=128",
+          "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop",
           "bio": "Breaks down complex encryption algorithms into digestible concepts, ensuring students understand how data is secured in transit and at rest."
         }
       ]

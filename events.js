@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     eventId = 'evt_001';
   }
 
-  // 2. Fetch the JSON data
+  
   fetch('events-data.json')
     .then(response => response.json())
     .then(data => {
       
-      // 3. Find the matching event or workshop
+      
       let eventData = null;
       if (data.events) {
         eventData = data.events.find(e => e.id === eventId);
@@ -72,12 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (eventData.speakers && eventData.speakers.length > 0) {
           eventData.speakers.forEach(speaker => {
+            const bioText = speaker.bio || "";
+            const hasLongBio = bioText.length > 70;
+            
             speakersContainer.innerHTML += `
               <div class="snap-start shrink-0 w-64 bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded-3xl p-6 shadow-sm flex flex-col items-center text-center hover:border-brand-500/50 transition">
                 <img src="${speaker.image}" alt="${speaker.name}" class="w-24 h-24 rounded-2xl object-cover mb-4 shadow-md" />
                 <h3 class="text-lg font-bold text-slate-900 dark:text-white">${speaker.name}</h3>
                 <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 mt-1">${speaker.role}</p>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-3 line-clamp-3">${speaker.bio}</p>
+                <div class="mt-3 text-xs text-slate-500 dark:text-slate-400 w-full">
+                  <p class="speaker-bio-text ${hasLongBio ? 'line-clamp-3' : ''}">${bioText}</p>
+                  ${hasLongBio ? '<button type="button" onclick="toggleSpeakerBio(this)" class="text-brand-600 hover:text-brand-500 dark:text-brand-400 font-semibold mt-1 focus:outline-none transition-colors duration-200">Read more</button>' : ''}
+                </div>
               </div>
             `;
           });
@@ -103,10 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
               clearInterval(autoScrollInterval);
           }
           
-          // Start automatically
+          
           startAutoScroll();
           
-          // Pause when user interacts
+          
           speakersContainer.addEventListener('mouseenter', stopAutoScroll);
           speakersContainer.addEventListener('mouseleave', startAutoScroll);
           speakersContainer.addEventListener('touchstart', stopAutoScroll);
@@ -159,3 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if(descEl) descEl.textContent = "There was a problem loading the event data.";
     });
 });
+
+
+window.toggleSpeakerBio = function(button) {
+  const container = button.previousElementSibling;
+  if (container.classList.contains('line-clamp-3')) {
+    container.classList.remove('line-clamp-3');
+    button.textContent = 'Read less';
+  } else {
+    container.classList.add('line-clamp-3');
+    button.textContent = 'Read more';
+  }
+};
