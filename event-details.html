@@ -96,66 +96,67 @@
   </header>
 
   <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <a href="javascript:history.back()" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400 transition mb-6">
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-      </svg>
-      Back to Events
-    </a>
+  <a href="javascript:history.back()" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400 transition mb-6">
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+    </svg>
+    Back to Events
+  </a>
 
-    <div class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 sm:p-10 shadow-lg mb-10">
-      <div class="flex flex-col md:flex-row gap-8 justify-between">
-        <div class="flex-1">
-          <span id="event-category-badge" class="px-3 py-1 text-xs font-semibold rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 mb-4 inline-block">
-            Loading...
-          </span>
-          <h1 id="event-title" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
-            Loading Event...
-          </h1>
-          
-          <div class="mb-6 text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-            <span id="event-description">Please wait while we fetch the event details...</span>
-            <button id="show-more-btn" class="hidden text-brand-600 hover:text-brand-500 dark:text-brand-400 font-semibold ml-1 focus:outline-none transition-colors duration-200">Show more</button>
-          </div>
-
-
-          <div class="flex flex-col sm:flex-row gap-6 mb-8 text-sm font-medium text-slate-700 dark:text-slate-300">
-            <div class="flex items-center gap-3">
-              <div class="p-3 bg-brand-500/10 rounded-xl text-brand-600 dark:text-brand-400">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs text-slate-400">Date & Time</p>
-                <p id="event-datetime">--</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="p-3 bg-brand-500/10 rounded-xl text-brand-600 dark:text-brand-400">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs text-slate-400">Location</p>
-                <p id="event-location">--</p>
-              </div>
-            </div>
-          </div>
+  
+  <div data-category="event" class="bg-white border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 rounded-3xl p-6 sm:p-10 shadow-lg mb-10">
+    <div class="flex flex-col md:flex-row gap-8 justify-between">
+      <div class="flex-1">
+        <span id="event-category-badge" class="px-3 py-1 text-xs font-semibold rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 mb-4 inline-block">
+          Loading...
+        </span>
+        <h2 id="event-title" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+          Loading Event...
+        </h2>
+        
+        <div class="mb-6 text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+          <span id="event-description">Please wait while we fetch the event details...</span>
+          <button id="show-more-btn" class="hidden text-brand-600 hover:text-brand-500 dark:text-brand-400 font-semibold ml-1 focus:outline-none transition-colors duration-200">Show more</button>
         </div>
 
-        <div class="md:w-72 shrink-0 bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700/60 flex flex-col justify-center text-center">
-          <div class="mb-4">
-            <span id="event-seats" class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">--</span>
-            <span class="text-sm font-semibold text-slate-500 dark:text-slate-400 block mt-1">Seats Available</span>
+        <div class="flex flex-col sm:flex-row gap-6 mb-8 text-sm font-medium text-slate-700 dark:text-slate-300">
+          <div class="flex items-center gap-3">
+            <div class="p-3 bg-brand-500/10 rounded-xl text-brand-600 dark:text-brand-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="space-y-2">
+              <p class="text-xs text-slate-400">Date & Time</p>
+              <span id="event-datetime">--</span>
+            </div>
           </div>
-          <button type="button" class="w-full py-3 px-6 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-lg shadow-brand-600/25">
-            Book Seat Now
-          </button>
+          <div class="flex items-center gap-3">
+            <div class="p-3 bg-brand-500/10 rounded-xl text-brand-600 dark:text-brand-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              </svg>
+            </div>
+            <div class="space-y-2">
+              <p class="text-xs text-slate-400">Location</p>
+              <span id="event-location">--</span>
+            </div>
+          </div>
         </div>
       </div>
+
+      <div class="md:w-72 shrink-0 bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-700/60 flex flex-col justify-center text-center">
+        <div class="mb-4">
+          <span id="event-seats" class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">--</span>
+          <span class="text-sm font-semibold text-slate-500 dark:text-slate-400 block mt-1">Seats Available</span>
+        </div>
+    
+        <button id="book-details-btn" type="button" class="book-seat-btn w-full py-3 px-6 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white transition shadow-lg shadow-brand-600/25">
+          Book Seat Now
+        </button>
+      </div>
     </div>
+  </div>
 
     <div>
       <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Meet the Speakers</h2>

@@ -1,19 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Get the ID from the URL (e.g. event-details.html?id=evt_001)
   const urlParams = new URLSearchParams(window.location.search);
   let eventId = urlParams.get('id');
   
-  // Default to evt_001 if loaded without an ID for preview purposes
   if (!eventId) {
     eventId = 'evt_001';
   }
 
-  
   fetch('events-data.json')
     .then(response => response.json())
     .then(data => {
-      
-      
       let eventData = null;
       if (data.events) {
         eventData = data.events.find(e => e.id === eventId);
@@ -23,10 +18,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       
       if (eventData) {
-        // 4. Update Header Data
+        const seatId = eventId.startsWith('evt_') 
+          ? `seats-event-${parseInt(eventId.replace('evt_0', '').replace('evt_', ''))}`
+          : `seats-ws-${parseInt(eventId.replace('ws_0', '').replace('ws_', ''))}`;
+
+        const seatsEl = document.getElementById('event-seats');
+        if (seatsEl) {
+          seatsEl.id = seatId;
+        }
+
+        const bookBtn = document.getElementById('book-details-btn');
+        if (bookBtn) {
+          bookBtn.setAttribute('data-seat-id', seatId);
+        }
+
+        const seatCounts = JSON.parse(localStorage.getItem('eventhub_seat_counts') || '{}');
+        const availableSeats = seatCounts.hasOwnProperty(seatId) ? seatCounts[seatId] : eventData.available_seats;
+
+        if (seatsEl) {
+          seatsEl.textContent = availableSeats;
+          if (availableSeats <= 0) {
+            seatsEl.className = "text-3xl font-extrabold text-rose-600 dark:text-rose-400";
+          }
+        }
+
         document.getElementById('event-title').textContent = eventData.title;
         
-        // Description logic (Short vs Full)
         const fullDesc = eventData.full_description || "";
         const shortDesc = eventData.short_description || (fullDesc.length > 100 ? fullDesc.substring(0, 100) + '...' : fullDesc);
         
@@ -53,22 +70,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const badge = document.getElementById('event-category-badge');
         badge.textContent = eventData.category.toUpperCase();
         
-        // Optional: apply badge color class dynamically based on JSON
         const color = eventData.badge_color || 'emerald';
         badge.className = `px-3 py-1 text-xs font-semibold rounded-lg bg-${color}-500/10 text-${color}-600 dark:text-${color}-400 border border-${color}-500/20 mb-4 inline-block`;
         
         document.getElementById('event-datetime').textContent = `${eventData.date} • ${eventData.time}`;
         document.getElementById('event-location').textContent = eventData.location;
-        
-        const seatsEl = document.getElementById('event-seats');
-        seatsEl.textContent = eventData.available_seats;
-        if(eventData.available_seats === 0) {
-          seatsEl.className = "text-3xl font-extrabold text-rose-600 dark:text-rose-400";
+
+        if (window.syncSeatCountsAndState) {
+          window.syncSeatCountsAndState();
         }
 
-        // 5. Build Speakers Carousel
         const speakersContainer = document.getElementById('speakers-container');
-        speakersContainer.innerHTML = ''; // Clear loading state
+        speakersContainer.innerHTML = '';
         
         if (eventData.speakers && eventData.speakers.length > 0) {
           eventData.speakers.forEach(speaker => {
@@ -88,37 +101,31 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
           });
           
-          // 6. Carousel Auto-Scroll Logic
           let autoScrollInterval;
-          const cardWidth = 256 + 24; // w-64 (256px) + gap-6 (24px)
+          const cardWidth = 256 + 24;
           
           function startAutoScroll() {
               autoScrollInterval = setInterval(() => {
                   if (!speakersContainer) return;
-                  // Check if reached the end (with a small buffer for precision)
                   if (speakersContainer.scrollLeft + speakersContainer.clientWidth >= speakersContainer.scrollWidth - 5) {
-                      // Loop back to beginning
                       speakersContainer.scrollTo({ left: 0, behavior: 'smooth' });
                   } else {
                       speakersContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
                   }
-              }, 3000); // 3 seconds timeout
+              }, 3000);
           }
           
           function stopAutoScroll() {
               clearInterval(autoScrollInterval);
           }
           
-          
           startAutoScroll();
-          
           
           speakersContainer.addEventListener('mouseenter', stopAutoScroll);
           speakersContainer.addEventListener('mouseleave', startAutoScroll);
           speakersContainer.addEventListener('touchstart', stopAutoScroll);
           speakersContainer.addEventListener('touchend', startAutoScroll);
           
-          // Manual navigation buttons
           const scrollLeftBtn = document.getElementById('scroll-left');
           const scrollRightBtn = document.getElementById('scroll-right');
 
@@ -129,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           if(scrollRightBtn) {
             scrollRightBtn.addEventListener('click', () => {
-                // If at the end, wrap to start on right click too
                 if (speakersContainer.scrollLeft + speakersContainer.clientWidth >= speakersContainer.scrollWidth - 5) {
                     speakersContainer.scrollTo({ left: 0, behavior: 'smooth' });
                 } else {
@@ -146,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
           if(rightBtn) rightBtn.classList.add('hidden');
         }
       } else {
-        // Handle error if ID not found
         const titleEl = document.getElementById('event-title');
         const descEl = document.getElementById('event-description');
         const speakersContainer = document.getElementById('speakers-container');
@@ -165,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if(descEl) descEl.textContent = "There was a problem loading the event data.";
     });
 });
-
 
 window.toggleSpeakerBio = function(button) {
   const container = button.previousElementSibling;
